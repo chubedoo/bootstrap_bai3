@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<style>
+    .spacing-top {
+        margin-top: 16px;
+    }
+    .spacing-bottom {
+        margin-bottom: 20px;
+    }
+    .margin-right {
+        margin-right: 8px;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="row spacing-top" style="border: 1px solid #ccc;">
+            <div class="col-md-4">
+                <div class="row g-3 align-items-center spacing-bottom">
+                    <div class="col-md-4">
+                      <label for="inputPassword6" class="col-form-label">Số bảo hiểm</label>
+                    </div>
+                    <div class="col-md-8">
+                      <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                    </div>
+                </div>
+                <div class="row g-3 align-items-center spacing-bottom">
+                    <div class="col-md-4">
+                      <label for="inputPassword6" class="col-form-label">Giá tiền</label>
+                    </div>
+                    <div class="col-md-8">
+                      <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                    </div>                
+                </div>
+                <div class="row g-3 align-items-center spacing-bottom">
+                    <div class="col-md-4">
+                      <label for="inputPassword6" class="col-form-label">Ngày áp dụng</label>
+                    </div>
+                    <div class="col-md-8">
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>---</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row g-3 align-items-center spacing-bottom">
+                    <div class="col-md-4">
+                      <label for="inputPassword6" class="col-form-label">Trạng thái hoạt động</label>
+                    </div>
+                    <div class="col-md-8">
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Tat ca</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                    </div>
+                </div>  
+                <div class="row g-3 align-items-center spacing-bottom">
+                    <div class="col-md-4">
+                      <label for="inputPassword6" class="col-form-label">Mã bảo hiểm</label>
+                    </div>
+                    <div class="col-md-8">
+                      <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                    </div>
+                </div>
+                <div class="row g-3 align-items-center spacing-bottom">
+                    <div class="col-md-4">
+                    
+                    </div>
+                    <div class="col-md-8">
+                        <button type="button" class="btn btn-success">Tìm kiếm</button>
+                        <button type="button" class="btn btn-warning">Làm mới</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row g-3 align-items-center spacing-bottom">
+                    <div class="col-md-4">
+                      <label for="inputPassword6" class="col-form-label">Loại hình</label>
+                    </div>
+                    <div class="col-md-8">
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Tat ca</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                    </div>
+                </div> 
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                    <label class="form-check-label" for="flexCheckIndeterminate">
+                      Hiện đầy đủ thông tin
+                    </label>
+                  </div>
+            </div>
+        </div>
+    </div>  
+    <div class="container">
+        <h3 align="center" class="spacing-top">Danh sách bảo hiểm</h3> 
+        <button type="button" class="btn btn-success" style="margin-left: -10px;">Xuất file Excel</button>  
+            
+        <div class="row">
+            <div class="col-md-10"></div>
+            <div class="col-md-2 d-flex justify-content-end"style="padding-right: 0px;">
+                <button type="button" class="btn btn-outline-danger spacing-bottom" >Lưu tất cả</button> 
+            </div>
+        </div>
+        <div class="row">
+            <table class="table table-dark table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th class="text-center align-middle">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                        </th>
+                        <th class="text-center align-middle">Đang hoạt động</th>
+                        <th class="text-center align-middle">STT</th>
+                        <th class="text-center align-middle">Mã - Số bảo hiểm</th>
+                        <th class="text-center align-middle">Ngày áp dụng</th>
+                        <th class="text-center align-middle">Điều chỉnh</th>
+                        <th class="text-center align-middle">Trạng thái</th>
+                        <th class="text-center align-middle"></th>
+                        <th class="text-center align-middle">Loại tiền</th>
+                        <th class="text-center align-middle">Đã bán</th>
+                        <th class="text-center align-middle">Giá niêm yết</th>
+                        <th class="text-center align-middle">Tổng thu</th>
+                        <th class="text-center align-middle">QL thu</th>
+                        <th class="text-center align-middle">Bộ phận phụ trách</th>
+                        <th class="text-center align-middle">Tên trưởng bộ phận</th>
+                        <th class="text-center align-middle">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="text-center align-middle">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                        </th>
+                        <th class="text-center align-middle"></th>
+                        <th class="text-center align-middle">1</th>
+                        <th class="text-center align-middle">
+                            <span class="badge text-bg-primary">0001123</span>
+                        </th>
+                        <th class="text-center align-middle">15/09/2023 14:56</th>
+                        <th class="text-center align-middle"></th>
+                        <th class="text-center align-middle">
+                            <span class="badge text-bg-success"> Đang hoạt động</span>
+                        </th>
+                        <th class="text-center align-middle"></th>
+                        <th class="text-center align-middle">QLVH-TM-CC</th>
+                        <th class="text-center align-middle">0</th>
+                        <th class="text-center align-middle">211.000</th>
+                        <th class="text-center align-middle">211.000</th>
+                        <th class="text-center align-middle"></th>
+                        <th class="text-center align-middle"></th>
+                        <th class="text-center align-middle">
+                            <span class="badge text-bg-warning">Đinh Thị Ngọc Liễu</span>
+                        </th>
+                        <th class="text-center align-middle">
+                            <div class="d-flex justify-content-center">
+                                <button type="button" class="btn btn-danger mx-1">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="btn btn-secondary mx-1">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="btn btn-primary mx-1">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th class="text-center align-middle">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                        </th>
+                        <th class="text-center align-middle"></th>
+                        <th class="text-center align-middle">2</th>
+                        <th class="text-center align-middle">
+                            <span class="badge text-bg-primary">0001123</span>
+                        </th>
+                        <th class="text-center align-middle">15/09/2023 14:56</th>
+                        <th class="text-center align-middle"></th>
+                        <th class="text-center align-middle">
+                            <span class="badge text-bg-success">Đang hoạt động</span>
+                        </th>
+                        <th class="text-center align-middle"></th>
+                        <th class="text-center align-middle">QLVH-TM-CC</th>
+                        <th class="text-center align-middle">0</th>
+                        <th class="text-center align-middle">211.000</th>
+                        <th class="text-center align-middle">211.000</th>
+                        <th class="text-center align-middle"></th>
+                        <th class="text-center align-middle"></th>
+                        <th class="text-center align-middle">
+                            <span class="badge text-bg-warning">Đinh Thị Ngọc Liễu</span>
+                        </th>
+                        <th class="text-center align-middle">
+                            <div class="d-flex justify-content-center">
+                                <button type="button" class="btn btn-danger mx-1">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="btn btn-secondary mx-1">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="btn btn-primary mx-1">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th class="text-center align-middle">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                        </th>
+                        <th class="text-center align-middle"></th>
+                        <th class="text-center align-middle">3</th>
+                        <th class="text-center align-middle">
+                            <span class="badge text-bg-primary">0001123</span>
+                        </th>
+                        <th class="text-center align-middle">15/09/2023 14:56</th>
+                        <th class="text-center align-middle"></th>
+                        <th class="text-center align-middle">
+                            <span class="badge text-bg-success">Đang hoạt động</span>
+                        </th>
+                        <th class="text-center align-middle"></th>
+                        <th class="text-center align-middle">QLVH-TM-CC</th>
+                        <th class="text-center align-middle">0</th>
+                        <th class="text-center align-middle">211.000</th>
+                        <th class="text-center align-middle">211.000</th>
+                        <th class="text-center align-middle"></th>
+                        <th class="text-center align-middle">
+                            <span class="badge text-bg-warning">PC02</span>
+                        </th>
+                        <th class="text-center align-middle">
+                            <span class="badge text-bg-warning">Đinh Thị Ngọc Liễu</span>
+                        </th>
+                        <th class="text-center align-middle">
+                            <div class="d-flex justify-content-center">
+                                <button type="button" class="btn btn-danger mx-1">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="btn btn-secondary mx-1">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="btn btn-primary mx-1">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th class="text-center align-middle">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                        </th>
+                        <th class="text-center align-middle"></th>
+                        <th class="text-center align-middle">4</th>
+                        <th class="text-center align-middle">
+                            <span class="badge text-bg-primary">0001123</span>
+                        </th>
+                        <th class="text-center align-middle">15/09/2023 14:56</th>
+                        <th class="text-center align-middle"></th>
+                        <th class="text-center align-middle">
+                            <span class="badge text-bg-success">Đang hoạt động</span>
+                        </th>
+                        <th class="text-center align-middle"></th>
+                        <th class="text-center align-middle">QLVH-TM-CC</th>
+                        <th class="text-center align-middle">0</th>
+                        <th class="text-center align-middle">211.000</th>
+                        <th class="text-center align-middle">211.000</th>
+                        <th class="text-center align-middle"></th>
+                        <th class="text-center align-middle"></th>
+                        <th class="text-center align-middle">
+                            <span class="badge text-bg-warning">Đinh Thị Ngọc Liễu</span>
+                        </th>
+                        <th class="text-center align-middle">
+                            <div class="d-flex justify-content-center">
+                                <button type="button" class="btn btn-danger mx-1">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="btn btn-secondary mx-1">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="btn btn-primary mx-1">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="row">
+                <div class="col-md-6" style="padding-left: 0px;">
+                    <b>Hiển thị 1-4 / Tổng 4</b>
+                </div>
+                <div class="col-md-6 d-flex justify-content-end" style="padding-right: 0px;">
+                    <b>Tổng tiền: 2.531.000 đồng</b>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
